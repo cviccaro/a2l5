@@ -55,3 +55,5 @@ angular2/tmp
 
 angular2/gulpfile.js
 angular2/gulpfile.js.map
+
+resources/views/angular.blade.php
