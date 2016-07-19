@@ -61,15 +61,13 @@ export class ProjectConfig extends SeedConfig {
     //   defaultExtension: 'js'
     // };
     let PACKAGES: string[] = [];
-    util.log('wtf: ', this.SYSTEM_BUILDER_CONFIG.packages);
+
     for (let pkgName in this.SYSTEM_BUILDER_CONFIG.packages) {
       PACKAGES.push(join(pkgName,'**'));
     }
 
     this.INJECTABLES = this.NPM_DEPENDENCIES.map(dep => dep.src)
                         .concat(PACKAGES);
-
-    util.log('project config!', this);
   }
 
 }
