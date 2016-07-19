@@ -6,11 +6,6 @@ import { INJECTABLES, ENV, APP_DEST,  } from '../../config';
 
 const plugins = <any>gulpLoadPlugins();
 
-function cleanPublicFolder() {
-  return gulp.src('../public', {read: false})
-    .pipe(plugins.clean({ force: true }));
-}
-
 function copyNodeModules() {
   return gulp.src(INJECTABLES, { cwd: 'node_modules/**' })
     //.pipe(plugins.wait(2500))
@@ -30,7 +25,7 @@ function createLaravelBlade() {
 }
 
 let stream = ENV === 'prod' ?
-  merge(cleanPublicFolder(), copyBuiltFiles(), createLaravelBlade())
-  : merge(cleanPublicFolder(), copyNodeModules(), copyBuiltFiles(), createLaravelBlade());
+  merge(copyBuiltFiles(), createLaravelBlade())
+  : merge(copyNodeModules(), copyBuiltFiles(), createLaravelBlade());
 
 export = () => stream;

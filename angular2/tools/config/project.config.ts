@@ -18,7 +18,7 @@ export class ProjectConfig extends SeedConfig {
     /* Enable SCSS support */
     this.ENABLE_SCSS = true;
 
-    this.CSS_DEST = 'css/';
+    //this.CSS_DEST = 'css/';
 
     /* Set plugin configs */
     // this.PLUGIN_CONFIGS['gulp-sass'] = { };
@@ -69,7 +69,7 @@ export class ProjectConfig extends SeedConfig {
     this.INJECTABLES = this.NPM_DEPENDENCIES.map(dep => dep.src)
                         .concat(PACKAGES);
 
-    util.log('project config!', this)
+    util.log('project config!', this);
   }
 
 }

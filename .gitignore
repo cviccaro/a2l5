@@ -40,6 +40,7 @@ angular2/.tsdrc
 angular2/.typingsrc
 
 #IDE configuration files
+.idea
 angular2/.idea
 angular2/.vscode
 angular2/*.iml
